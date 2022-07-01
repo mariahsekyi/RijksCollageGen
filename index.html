@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="Random Art Collage Creator">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="utf-8">
+        <title>Art Collage Generator</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <header class="row">
+            <h1 id="heading-words" class="col-2">Art Collage Generator</h1>
+            <nav class="col-4">
+                <p>Welcome to the Art Collage Generator! This generator pulls
+                    pictures from the RIJKS Museum in Amsterdam using their RIJKS
+                    api. To generate a collage you will select an art style and a color.
+                    The generated collage will be a combination of RIJKS Museum pieces and 
+                    color blocks! Have fun!
+                </p>
+                <button type="button" id="start">
+                    <a href="#art-style">Get Started</a>
+                </button>
+            </nav>
+        </header>
+        <div class="container " id = "main-section">
+            
+            <form action="script.js" class = "row justify-content-around" id="art-style">
+                <div class="col-4" id="prints">
+                    <!--preview image of some sort of print-->
+                    <h3>
+                        Prints
+                    </h3>
+                    <p>Pick from a large selection of prints from the RIJKS museum. 
+                        These prints vary in style, from classic 17th century 
+                        to more modern 21st century pieces. <strong>The styles 
+                        much more variable if you select prints, something you might want to 
+                        keep in mind when you're choosing a medium. </strong>
+                    </p>
+                    <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=print&imgonly=True&st=Objects">
+                        <img src="images/print.jpeg" class="style-pictures">
+                    </a>
+                    
+                    <label> I want a print collage!</label>
+                    <input 
+                    onclick="printColors()";
+                    type="radio"
+                    name="style"
+                    value="print"
+                    >  
+                </div>
+                <div class="col-4" id="paints">
+                    <!--preview image of some sort of painting-->
+                    <h3>
+                        Paintings
+                    </h3>
+                    <p>Pick from a large selection of painted images from the RIJKS
+                        museum collection. Many of these paintings have a more medeival 
+                        vibe to them. <strong>While these styles do not vary greatly, the 
+                        similarities can create a cohesive and aesthetic collage. This might 
+                        be something to consider when choosing a medium.</strong>
+                    </p>
+                    <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=painting&imgonly=True&st=Objects&ii=0">
+                        <img src="images/paint.jpg" class="style-pictures" id=paint-pic>
+                    </a>
+                    <label> I want a painting collage!</label>
+                    <input 
+                    onclick="paintColors()";
+                    type="radio"
+                    name="style"
+                    value="painting"
+                    >  
+                </div>
+            </form>
+            <div class= "row justify-content-center" id="style-submit">
+                <button  id="next-button" type="button">
+                    <a href="#go-button">Pick a color</a>
+                </button>          
+            </div>
+        
+            <section class="row justify-content-center" id="colors">
+                <form id="color-pick">    
+                </form>
+            </section>
+            <section class="row justify-content-center" >
+                <button  type="button" id="go-button">
+                    Generate my collage
+                </button>
+                
+            </section>
+        </div>
+        <div class="container" id="container">
+            <section class = "row " id="collage-section">
+                
+            </section>
+            <button type="button" id="close" onclick="document.location.reload()">Create another</button>
+            <section class="row justify-content-center" id="warning">
+            </section>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
