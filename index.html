@@ -16,7 +16,7 @@
                     pictures from the RIJKS Museum in Amsterdam using their RIJKS
                     api. To generate a collage you will select an art style and a color.
                     The generated collage will be a combination of RIJKS Museum pieces and 
-                    color blocks! Have fun!
+                    color blocks! Click "Get Started" to begin:)
                 </p>
                 <button type="button" id="start">
                     <a href="#art-style">Get Started</a>
@@ -24,52 +24,65 @@
             </nav>
         </header>
         <div class="container " id = "main-section">
-            
-            <form action="script.js" class = "row justify-content-around" id="art-style">
-                <div class="col-4" id="prints">
-                    <!--preview image of some sort of print-->
-                    <h3>
-                        Prints
-                    </h3>
-                    <p>Pick from a large selection of prints from the RIJKS museum. 
-                        These prints vary in style, from classic 17th century 
-                        to more modern 21st century pieces. <strong>The styles 
-                        much more variable if you select prints, something you might want to 
-                        keep in mind when you're choosing a medium. </strong>
-                    </p>
-                    <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=print&imgonly=True&st=Objects">
-                        <img src="images/print.jpeg" class="style-pictures">
-                    </a>
+            <form action="script.js" id="art-style"> 
+                <div class="row">
+                    <div class="col-6" id="prints">
+                        <!--preview image of some sort of print-->
+                        <h1>
+                            Prints
+                        </h1>
+                        <p>Pick from a large selection of prints from the RIJKS museum. 
+                            These prints vary in style, from classic 17th century 
+                            to more modern 21st century pieces. <strong>The styles 
+                            much more variable if you select prints, something you might want to 
+                            keep in mind when you're choosing a medium. </strong>
+                        </p>
+                        <input 
+                        onclick="printColors()";
+                        type="radio"
+                        name="style"
+                        value="print"
+                        >  
+                        <label> I want a print collage!</label>
+                    </div>
+                    <div class= "col-6 img-cont">
+                        <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=print&imgonly=True&st=Objects">
+                            <img src="images/print.jpeg" class="style-pictures">
+                        </a>
+                        <div class="hover-text">
+                            <h3>Click here to see entire collection</h3>
+                        </div>
+                    </div>
                     
-                    <label> I want a print collage!</label>
-                    <input 
-                    onclick="printColors()";
-                    type="radio"
-                    name="style"
-                    value="print"
-                    >  
                 </div>
-                <div class="col-4" id="paints">
-                    <!--preview image of some sort of painting-->
-                    <h3>
-                        Paintings
-                    </h3>
-                    <p>Pick from a large selection of painted images from the RIJKS
-                        museum collection. Many of these paintings have a more medeival 
-                        vibe to them. <strong>While these styles do not vary greatly, the 
-                        similarities can create a cohesive and aesthetic collage. This might 
-                        be something to consider when choosing a medium.</strong>
-                    </p>
-                    <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=painting&imgonly=True&st=Objects&ii=0">
-                        <img src="images/paint.jpg" class="style-pictures" id=paint-pic>
-                    </a>
-                    <label> I want a painting collage!</label>
-                    <input 
-                    onclick="paintColors()";
-                    type="radio"
-                    name="style"
-                    value="painting"
-                    >  
+                <div class="row">
+                    <div class="col-6" id="paints">
+                        <!--preview image of some sort of painting-->
+                        <h1>
+                            Paintings
+                        </h1>
+                        <p>Pick from a large selection of painted images from the RIJKS
+                            museum collection. Many of these paintings have a more medeival 
+                            vibe to them. <strong>While these styles do not vary greatly, the 
+                            similarities can create a cohesive and aesthetic collage. This might 
+                            be something to consider when choosing a medium.</strong>
+                        </p>
+                        <input 
+                        onclick="paintColors()";
+                        type="radio"
+                        name="style"
+                        value="painting"
+                        >  
+                        <label> I want a painting collage!</label>
+                    </div>
+                    <div class="col-6 img-cont" >
+                        <a target = "_blank" href = "https://www.rijksmuseum.nl/en/search?f=1&p=1&ps=12&type=painting&imgonly=True&st=Objects&ii=0">
+                            <img src="images/paint.jpg" class="style-pictures" id=paint-pic>
+                        </a>
+                        <div class="hover-text">
+                            <h3>Click here to see entire collection</h3>
+                        </div>
+                    </div>
                 </div>
             </form>
             <div class= "row justify-content-center" id="style-submit">
